@@ -1,13 +1,16 @@
-import Vue from 'vue'
-import App from './App.vue'
-import './registerServiceWorker'
-import router from './router'
-import store from './store'
+/*
+ * @Author: hongdong.liao
+ * @Date: 2021-05-07 14:59:55
+ * @LastEditors: hongdong.liao
+ * @LastEditTime: 2021-05-10 15:14:11
+ * @FilePath: /microDemo/demo-web/demo-web-main/src/main.js
+ */
+// 注册第三方插件、样式，接入SDK等
+import './core/install';
 
-Vue.config.productionTip = false
+// 主应用 vue 实例化
+import './core/render';
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+// 启动微服务
+import microAppStart from './core/auth';
+microAppStart();

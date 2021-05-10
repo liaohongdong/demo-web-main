@@ -1,0 +1,6 @@
+app/*
+# COMMON Ignore, do not Change lines
+src/mock/*
+src/lang/*
+src/views/test/*
+nodo_modules/**
