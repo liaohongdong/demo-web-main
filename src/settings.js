@@ -2,7 +2,7 @@
  * @Author: hongdong.liao
  * @Date: 2021-05-07 15:45:44
  * @LastEditors: hongdong.liao
- * @LastEditTime: 2021-05-07 17:36:19
+ * @LastEditTime: 2021-05-13 18:37:49
  * @FilePath: /microDemo/demo-web/demo-web-main/src/settings.js
  */
 module.exports = {
@@ -29,14 +29,14 @@ module.exports = {
     },
     SUB_APP_PREFIX: 'subapp-viewport',
     MENUS: {
-        goods: {
-            devEntry: '//localhost:9010',
-            depEntry: `//web-goods.demo.cc`,
-            moduleName: 'goods',
+        order: {
+            devEntry: '//localhost:10003',
+            depEntry: '//web-order.demo.cc',
+            moduleName: 'order',
         },
         system: {
-            devEntry: '//localhost:9024',
-            depEntry: `//web-system.demo.com`,
+            devEntry: '//localhost:10002',
+            depEntry: '//web-system.demo.com',
             moduleName: 'system',
         },
     },
@@ -44,9 +44,9 @@ module.exports = {
         {
             module: 'login',
             defaultRegister: true,
-            devEntry: '//localhost:9001',
-            depEntry: `//web-login.demo.com`,
+            devEntry: '//localhost:10001',
+            depEntry: '//web-login.demo.com',
             routerBase: '/login',
         }
-    ]
-}
+    ],
+};

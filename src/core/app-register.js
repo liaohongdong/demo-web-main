@@ -2,7 +2,7 @@
  * @Author: hongdong.liao
  * @Date: 2021-01-05 18:18:47
  * @LastEditors: hongdong.liao
- * @LastEditTime: 2021-05-07 17:52:05
+ * @LastEditTime: 2021-05-14 11:08:12
  * @FilePath: /microDemo/demo-web/demo-web-main/src/core/app-register.js
  */
 import { registerMicroApps, setDefaultMountApp, start, initGlobalState, } from 'qiankun';
@@ -36,6 +36,7 @@ const qianKunStart = (list = []) => {
     });
     registerMicroApps(apps);
     // 设置默认进入的子应用 需要进入的子应用路由前缀
+    console.log(defaultApp, 39);
     setDefaultMountApp(defaultApp + '/');
     // 启动微前端
     start({
@@ -50,12 +51,13 @@ export default qianKunStart;
 
 // 用于加载需要token的应用
 export const qkAppStart = menus => {
+    console.log(123, 54);
     let apps = []; // 子应用数组盒子
     let isProd = ['production', 'prod'].includes(process.env.NODE_ENV); // 根据开发环境|线上环境加载不同entry
     menus.forEach(i => {
         apps.push({
             name: i.module,
-            entry: isProd ? i.depEntry : i.devEntry,
+            entry: isProd ? i.dep_entry : i.dev_entry,
             container: `#subapp-viewport-${i.module}`,
             activeRule: i.routerBase,
             props: {
@@ -65,7 +67,9 @@ export const qkAppStart = menus => {
             },
         });
     });
+    console.log(apps);
     registerMicroApps(apps);
+    setDefaultMountApp('/dashboard');
     appStore(initGlobalState);
     start({
         prefetch: 'all',

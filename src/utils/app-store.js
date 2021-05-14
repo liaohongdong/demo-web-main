@@ -2,7 +2,7 @@
  * @Author: hongdong.liao
  * @Date: 2021-01-05 19:51:29
  * @LastEditors: hongdong.liao
- * @LastEditTime: 2021-05-10 15:07:00
+ * @LastEditTime: 2021-05-13 18:56:40
  * @FilePath: /microDemo/demo-web/demo-web-main/src/utils/app-store.js
  */
 import store from '@/store';
@@ -27,7 +27,7 @@ const appStore = initGlobalState => {
 
     // 改变数据并通知所有应用
     setGlobalState({
-        message: 'micro-web-main',
+        message: '',
     });
 };
 
