@@ -108,6 +108,7 @@ export default {
             console.log(arr, 106);
             // 级联面板选择 取最后一级的url
             const orientationUrl = arr[arr.length - 1];
+            console.log(orientationUrl, 111);
             routerGo(orientationUrl);
         },
         goto(path) {
@@ -118,6 +119,7 @@ export default {
         },
         handleMenuClick(menu) {
             const { url, } = menu;
+            console.log(url, 111);
             routerGo(url); // 跳转
         },
     },
